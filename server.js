@@ -67,6 +67,19 @@ app.get('/read-cookies', (req, res) => {
 })
 
 
+
+app.get('/delete-cookies', (req, res) => { 
+    
+    res.clearCookie("My-Cookie-Name"); // limpiamos la cookie
+    res.clearCookie("My-Secure-Cookie"); // limpiamos la cookie 
+
+    res.status(200).json({
+        ok: true,
+        msg: "Cookie eliminadas en el navegor"
+    })
+})
+
+
 // Escuchar el servidor
 app.listen(port, () => {
     console.log(`Escuchando en http://localhost:${port}` );
