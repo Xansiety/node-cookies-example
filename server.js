@@ -56,6 +56,17 @@ app.get('/set-cookie', (req, res) => {
 
 
 
+
+app.get('/read-cookies', (req, res) => {
+
+    console.log(req.cookies)
+    res.status(200).json({
+        ok: true,
+        msg: "Leyendo cookies, revisa tu consola ⚡donde ejecutas NODE.JS"
+    })
+})
+
+
 // Escuchar el servidor
 app.listen(port, () => {
     console.log(`Escuchando en http://localhost:${port}` );
